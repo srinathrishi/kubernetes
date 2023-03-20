@@ -1,0 +1,17 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sNamespacePattern
+metadata:
+  name: must-have-app-team-environment-in-namespace
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Namespace"]
+    excludedNamespaces:
+      - gatekeeper-system
+      - kube-node-lease
+      - kube-public
+      - kube-system
+  parameters:
+    pattern: "^[a-z-0-9]+-[a-z-0-9]+-(dev|prod)$"
+    message: "Namespace name must be in the format of <Team_Name>_<App_Name>_<Environment>."
