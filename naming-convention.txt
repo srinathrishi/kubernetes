@@ -1,0 +1,33 @@
+Kubernetes Namespace Naming Convention
+To help manage multi-tenancy in our Kubernetes environment, we've established a naming convention for namespaces that all app teams should follow. This convention will help ensure consistency and easy identification of namespace names across different teams and applications.
+
+Convention
+Each Kubernetes namespace should have three words separated by '-':
+
+<team-name>-<app-name>-<environment>
+
+Where:
+
+<team-name> is the name of the team deploying the application. This should be a single word without any dashes.
+<app-name> is the name of the application being deployed. This should also be a single word without any dashes.
+<environment> is the environment the application is being deployed to. This could be "dev", "staging", "prod", or any other environment name that makes sense for our organization.
+Example
+Let's say the IT-CSI team is deploying the Aqua-Sec application in the dev environment. The Kubernetes namespace name should be:
+
+itcsi-aquasec-dev
+
+Guidelines
+Please follow these guidelines when creating Kubernetes namespaces:
+
+Use lowercase letters only.
+Do not use any special characters or spaces.
+Avoid using numbers in the namespace name.
+If your team or application name contains a dash (-), please remove it from the namespace name.
+Benefits
+By following this naming convention, we can achieve the following benefits:
+
+Easy identification of which team and application the namespace belongs to.
+Consistency across different teams and applications, making it easier to manage and troubleshoot our Kubernetes environment.
+Clear separation between different environments, helping to prevent mistakes such as deploying to the wrong environment.
+If you have any questions or concerns about this naming convention, please reach out to the DevOps team.
+
