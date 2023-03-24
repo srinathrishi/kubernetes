@@ -1,0 +1,16 @@
+OPA Gatekeeper is an open-source policy engine that helps ensure that Kubernetes deployments adhere to organizational policies. OPA Gatekeeper allows you to write policies that define a set of rules that Kubernetes resources must follow to be considered compliant.
+
+For example, you might define policies that ensure all Kubernetes Deployments must use a specific container image or that Kubernetes Secrets cannot be created without certain labels.
+
+When a developer attempts to deploy a workload to Kubernetes, OPA Gatekeeper will evaluate the workload against the policies defined by the organization. If the workload adheres to the policies, it will be deployed. If the workload violates the policies, it will be rejected.
+
+This process acts as a guard rail for developers, helping to ensure that they follow best practices and organizational policies when deploying workloads to Kubernetes.
+
+In addition to enforcing policies, OPA Gatekeeper provides auditing capabilities that allow you to track which workloads have been deployed and whether they adhere to organizational policies. This information can be used to ensure compliance and to identify areas where policies may need to be updated or refined.
+
+To create policies with OPA Gatekeeper, you write policy templates in Rego, a declarative language specifically designed for defining policies. Once you have written your policy templates, you can use the OPA Gatekeeper CLI to deploy them to your Kubernetes cluster.
+
+Overall, OPA Gatekeeper is a powerful tool for ensuring that Kubernetes workloads adhere to organizational policies and best practices, providing a layer of security and compliance for your Kubernetes deployments.
+
+
+
